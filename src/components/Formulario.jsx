@@ -2,16 +2,16 @@
 import { useState } from 'react';
 import { Button, ConfigProvider, Space, Input, Form } from 'antd';
 
-const defaultData = {
+const defaultColor = {
 	colorBorder: '#000',
 }
 
 export const Formulario = () => {
     const [form] = Form.useForm();
-	const [color, setColor] = useState(defaultData);
+	const [color, setColor] = useState(defaultColor);
 	
-	const handleColorChangeGreen = () => {
-		setColor('#0fad31');
+	const handleColorChangeRed = () => {
+		setColor('#ad390f');
 	}
 	const handleColorChangeBlue = () => {
 		setColor('#0e32d4')
@@ -31,6 +31,7 @@ export const Formulario = () => {
     }}
 >
     <Form
+        onSubmit={ValidityState}
         name='basic-form'
         form={form}
         style={{
@@ -47,13 +48,6 @@ export const Formulario = () => {
     >
             <Form.Item
                 label="Nombre de Usuario"
-                rules={[
-                {
-                required: true,
-                message: 'Please input your username!',
-                },
-            ]}
-                required= {true}
             >
                 <Input
                     placeholder='Ingrese Usuario'
@@ -61,28 +55,20 @@ export const Formulario = () => {
             </Form.Item>
             <Form.Item
                 label="Contraseña"
-                // required= {true}
-                rules={[
-                        {
-                        required: true,
-                        message: 'Please input your username!',
-                        },
-                    ]}
             >
                 <Input.Password
                     placeholder='Ingrese Contraseña'
-                    
                 />
             </Form.Item>
             <Form.Item>
               <Space>
                   <Button 
                     name='greenButton'
-                    style={{borderColor: '#0fad31'}}
+                    style={{borderColor: '#ad390f'}}
                     type="outlined" 
-                    onClick={handleColorChangeGreen}
+                    onClick={handleColorChangeRed}
                 >
-                    Verde
+                    Rojo
                 </Button>
                 <Button 
                     name='yellowButton'
@@ -101,11 +87,6 @@ export const Formulario = () => {
                     Azul
                 </Button>
               </Space>
-            </Form.Item>
-            <Form.Item>
-                <Button type='primary' htmlType='submit'>
-                    Enviar
-                </Button>
             </Form.Item>
         </Form>
     </ConfigProvider>
