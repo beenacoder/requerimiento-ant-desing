@@ -1,0 +1,45 @@
+@import 'variables';
+
+
+@each $name, $value in $btnColors {
+	.btn-#{$name}{
+		border: 1px solid $value;
+		color: #000000;
+		&:hover {
+			background-color: $value;
+			color: #000000 !important;
+			border: none;
+		}
+	}
+}
+
+
+
+// .btn {
+		
+// 	&-green {
+// 		
+// 		&:hover {
+// 			background-color: $greenColor;
+// 			color: #000 !important;
+// 			border: none;
+// 		}
+// 	}
+// 	&-yellow {
+// 		border: 1px solid $yellowColor;
+// 		&:hover {
+// 			background-color: $yellowColor;
+// 			color: #000 !important;
+// 			border: none;
+// 		}
+//     }
+// 	&-blue {
+// 		border: 1px solid $blueColor;
+// 		&:hover {
+// 			background-color: $blueColor;
+// 			color: #000 !important;
+// 			border: none;
+// 		}
+//     }
+	
+// }

@@ -1,6 +1,9 @@
 
 import { useState } from 'react';
-import { Button, ConfigProvider, Space, Input, Form } from 'antd';
+import { ConfigProvider, Space, Form } from 'antd';
+import CustomInput  from './custom/CustomInput.jsx';
+import CustomButton  from './custom/CustomButton.jsx';
+
 
 const defaultColor = {
 	colorBorder: '#000',
@@ -10,25 +13,13 @@ export const Formulario = () => {
     const [form] = Form.useForm();
 	const [color, setColor] = useState(defaultColor);
 	
-	const handleColorChangeRed = () => {
-		setColor('#ad390f');
-	}
-	const handleColorChangeBlue = () => {
-		setColor('#0e32d4')
-	}
-	const handleColorChangeYellow = () => {
-		setColor('#e9ec13')
-	}
-
-
-
   return (
     <ConfigProvider
-    theme={{
-        token: {
-            colorBorder:`${color}`,
-        },
-    }}
+        theme={{
+            token: {
+                colorBorder:`${color}`,
+            },
+        }}
 >
     <Form
         onSubmit={ValidityState}
@@ -40,52 +31,40 @@ export const Formulario = () => {
             justifyContent: 'center',
             alignItems: 'center',
             height: '100vh',
-            
+            width: '100vw',
         }}
         initialValues={{
             remember: true,
           }}
     >
-            <Form.Item
-                label="Nombre de Usuario"
-            >
-                <Input
-                    placeholder='Ingrese Usuario'
-                />
-            </Form.Item>
-            <Form.Item
-                label="Contraseña"
-            >
-                <Input.Password
-                    placeholder='Ingrese Contraseña'
-                />
-            </Form.Item>
+            <CustomInput 
+                label = "Nombre de Usuario"
+                componentplaceholder = "Escribe tu usuario..."
+                className = "custom-color-border"
+            />
+            <CustomInput 
+                label = "Contraseña"
+                componentplaceholder = "Ingrese contraseña..."
+                className = "custom-color-border"
+            />
             <Form.Item>
               <Space>
-                  <Button 
-                    name='greenButton'
-                    style={{borderColor: '#ad390f'}}
-                    type="outlined" 
-                    onClick={handleColorChangeRed}
-                >
-                    Rojo
-                </Button>
-                <Button 
-                    name='yellowButton'
-                    style={{borderColor: '#e9ec13'}}
-                    type="text" 
-                    onClick={handleColorChangeYellow}
-                >
-                    Amarillo
-                </Button>
-                <Button 
-                    name='blueButton'
-                    style={{borderColor: '#0e32d4'}}
-                    type="text" 
-                    onClick={handleColorChangeBlue}
-                >
-                    Azul
-                </Button>
+                <CustomButton 
+                    label="Green-default"
+                    className= "btn-green-one"
+                />
+                <CustomButton 
+                    label="Yellow-sm"
+                    className= "btn-yellow-one"
+                />
+                <CustomButton 
+                    label="Blue-md"
+                    className= "btn-blue-one"
+                />
+                 <CustomButton 
+                    label="Red-lg"
+                    className= "btn-red-one"
+                />
               </Space>
             </Form.Item>
         </Form>
