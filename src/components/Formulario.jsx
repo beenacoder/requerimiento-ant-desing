@@ -11,28 +11,36 @@ export const Formulario = () => {
 	const [formColor, setFormColor] = useState('');
 
 	
-	// const handleClick = (e) => { 
-    //     setColor(`${e.target.value}`)
-	// 	console.log(color);
+	const handleClick = (e) => { 
+        setColor(`${e.target.value}`)
+        if(e.target.value === 'green'){
+            setFormColor('success')
+        } else if(e.target.value === 'red'){
+            setFormColor('danger')
+        } else if(e.target.value === 'blue'){
+            setFormColor('info')
+        } else if(e.target.value === 'yellow'){
+            setFormColor('warning')
+        }
+	}
+
+    // const handleClickDefault = () => { 
+    //     setColor(`green`)
+    //     setFormColor('success')
 	// }
+    // const handleClickBlue = () => { 
+    //     setColor(`blue`)
+    //     setFormColor('info')
 
-    const handleClickDefault = () => { 
-        setColor(`green`)
-        setFormColor('success')
-	}
-    const handleClickBlue = () => { 
-        setColor(`blue`)
-        setFormColor('info')
-
-	}
-    const handleClickRed = () => { 
-        setColor(`red`)
-        setFormColor('danger')
-	}
-    const handleClickYellow = () => { 
-        setColor(`yellow`)
-        setFormColor('warning')
-	}
+	// }
+    // const handleClickRed = () => { 
+    //     setColor(`red`)
+    //     setFormColor('danger')
+	// }
+    // const handleClickYellow = () => { 
+    //     setColor(`yellow`)
+    //     setFormColor('warning')
+	// }
 	
 
 
@@ -67,25 +75,25 @@ export const Formulario = () => {
                     label="Green-default"
                     className= "btn-green-one"
                     value="green"
-                    handleClick= {handleClickDefault}
+                    handleClick= {handleClick}
                 />
                 <CustomButton 
                     label="Yellow-sm"
                     className= "btn-yellow-one"
                     value="yellow"
-                    handleClick= {handleClickYellow}
+                    handleClick= {handleClick}
                 />
                 <CustomButton 
                     label="Blue-md"
                     className= "btn-blue-one"
                     value="blue"
-                    handleClick= {handleClickBlue}
+                    handleClick= {handleClick}
                 />
                  <CustomButton 
                     label="Red-lg"
                     className= {`btn-red-one`}
                     value="red"
-                    handleClick= {handleClickRed}
+                    handleClick= {handleClick}
                 />
               </Space>
         </Form>
