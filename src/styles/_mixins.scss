@@ -1,0 +1,6 @@
+@mixin inputsField ($bd, $w, $h) {
+    border: 1px solid $bd;
+    width: $w;
+    height: $h;
+}
+
