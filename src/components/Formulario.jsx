@@ -8,27 +8,30 @@ import CustomButton  from './custom/CustomButton.jsx';
 export const Formulario = () => {
     const [form] = Form.useForm();
 	const [color, setColor] = useState('');
+	const [formColor, setFormColor] = useState('');
+
 	
 	// const handleClick = (e) => { 
     //     setColor(`${e.target.value}`)
 	// 	console.log(color);
 	// }
 
-    const handleClickDefault = (e) => { 
+    const handleClickDefault = () => { 
         setColor(`green`)
-		console.log(color);
+        setFormColor('success')
 	}
-    const handleClickBlue = (e) => { 
+    const handleClickBlue = () => { 
         setColor(`blue`)
-		console.log(color);
+        setFormColor('info')
+
 	}
-    const handleClickRed = (e) => { 
+    const handleClickRed = () => { 
         setColor(`red`)
-		console.log(color);
+        setFormColor('danger')
 	}
-    const handleClickYellow = (e) => { 
+    const handleClickYellow = () => { 
         setColor(`yellow`)
-		console.log(color);
+        setFormColor('warning')
 	}
 	
 
@@ -46,18 +49,7 @@ export const Formulario = () => {
         onSubmit={ValidityState}
         name='basic-form'
         form={form}
-        style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-            width: '100vw',
-            
-        }}
-        initialValues={{
-            remember: true,
-          }}
+        className={`container-${formColor}`}
     >
             <CustomInput 
                 label = "Nombre de Usuario"

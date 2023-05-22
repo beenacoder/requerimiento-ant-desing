@@ -13,9 +13,9 @@ $btnColors: (
 );
 
 $bgColors: (
-    success: ligthen($greenColor, 50),
-    info: ligthen($blueColor, 50),
-    warning: ligthen($blueColor, 50),
-    danger: ligthen($redColor, 50),
-    dark: ligthen($blueColor, 50)
+    success: lighten($greenColor, 50),
+    info: lighten($blueColor, 30),
+    warning: lighten($yellowColor, 20),
+    danger: lighten($redColor, 50),
+    dark: lighten($blueColor, 50)
 );

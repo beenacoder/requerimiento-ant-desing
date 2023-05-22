@@ -1,9 +1,16 @@
 @import 'variables';
 @import 'mixins';
 
-body {
-	background-color: lighten($greenColor, 50)
+// .container {
+// 	@include container($greenColor);
+// }
+@each $name, $val in $bgColors {
+	.container-#{$name}{
+		@include container($val)
+		
+	}   
 }
+
 
 .custom-border {
 	&green{
