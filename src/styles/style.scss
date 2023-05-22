@@ -1,10 +1,12 @@
 @import 'variables';
 @import 'mixins';
 
-// .container {
-// 	@include container($greenColor);
-// }
+.container- {
+	@include container(#fff);
+}
+
 @each $name, $val in $bgColors {
+	
 	.container-#{$name}{
 		@include container($val)
 		
@@ -14,17 +16,17 @@
 
 .custom-border {
 	&green{
-		@include inputsField($greenColor, 200px, 30px);
-	}
-	&red {
-		@include inputsField($redColor, 500px, 50px);	
-	}
-	&blue {
-		@include inputsField($blueColor, 400px, 40px);
+		@include inputsField($greenColor, $transitionChange, scale(1));
 	}
 	&yellow {
-        @include inputsField($yellowColor, 100px, 30px);    
-    }
+		@include inputsField($yellowColor, $transitionChange, scale(0.8));   
+	}
+	&blue {
+		@include inputsField($blueColor, $transitionChange, scale(1.1));
+	}
+	&red {
+		@include inputsField($redColor, $transitionChange, scale(1.3));
+	}
 }
 
 

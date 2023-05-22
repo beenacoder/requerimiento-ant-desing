@@ -46,13 +46,13 @@ export const Formulario = () => {
 
 
   return (
-//     <ConfigProvider
-//     theme={{
-//         token: {
-//             colorBorder:`${color}`,
-//         },
-//     }}
-// >
+    <ConfigProvider
+    theme={{
+        token: {
+            colorBorder:`#000`,
+        },
+    }}
+>
     <Form
         onSubmit={ValidityState}
         name='basic-form'
