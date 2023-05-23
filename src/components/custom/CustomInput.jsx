@@ -22,7 +22,7 @@ export default function CustomInput(props) {
 					{...props}
 				/>
 			</Form.Item>
-			<p className='own-form-example-input'>{props.example}</p>
+			{/* <p className='own-form-example-input'>{props.example}</p> */}
 		</>
 	)
 }

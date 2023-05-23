@@ -4,8 +4,7 @@ import { ConfigProvider, Space, Form } from 'antd';
 import CustomInput  from './custom/CustomInput.jsx';
 import CustomButton  from './custom/CustomButton.jsx';
 
-
-export const Formulario = () => {
+export const CustomForm = () => {
     const [form] = Form.useForm();
 	const [color, setColor] = useState('');
 	const [formColor, setFormColor] = useState('');
@@ -13,27 +12,53 @@ export const Formulario = () => {
 
 	
 	const handleClick = (e) => { 
-        
-        if(e.currentTarget.value === 'green'){
-            setColor(`${e.currentTarget.value}`)
-            setFormColor('success')
-            setInputSize('large')
-
-        } else if(e.currentTarget.value === 'red'){
-            setColor(`${e.currentTarget.value}`)
-            setFormColor('danger')
-            setInputSize('large')
-
-        } else if(e.currentTarget.value === 'blue'){
-            setColor(`${e.currentTarget.value}`)
-            setFormColor('info')
-            setInputSize('medium')
-
-        } else if(e.currentTarget.value === 'yellow'){
-            setColor(`${e.currentTarget.value}`)
-            setFormColor('warning')
-            setInputSize('small')
+        switch (e.currentTarget.value) {
+            case 'green': {
+                setColor(`${e.currentTarget.value}`)
+                setFormColor('success')
+                setInputSize('large')
+            }
+            break;
+            case 'yellow': {
+                setColor(`${e.currentTarget.value}`)
+                setFormColor('warning')
+                setInputSize('small')
+            }
+            break;
+            case 'blue': {
+                setColor(`${e.currentTarget.value}`)
+                setFormColor('info')
+                setInputSize('medium')
+            }
+            break;
+            case 'red': {
+                setColor(`${e.currentTarget.value}`)
+                setFormColor('danger')
+                setInputSize('large')
+            }
+            break;
         }
+        
+        // if(e.currentTarget.value === 'green'){
+        //     setColor(`${e.currentTarget.value}`)
+        //     setFormColor('success')
+        //     setInputSize('large')
+
+        // } else if(e.currentTarget.value === 'red'){
+        //     setColor(`${e.currentTarget.value}`)
+        //     setFormColor('danger')
+        //     setInputSize('large')
+
+        // } else if(e.currentTarget.value === 'blue'){
+        //     setColor(`${e.currentTarget.value}`)
+        //     setFormColor('info')
+        //     setInputSize('medium')
+
+        // } else if(e.currentTarget.value === 'yellow'){
+        //     setColor(`${e.currentTarget.value}`)
+        //     setFormColor('warning')
+        //     setInputSize('small')
+        // }
 	}
 
     return (
@@ -63,6 +88,7 @@ export const Formulario = () => {
                     label="Contraseña"
                     componentplaceholder="Ingrese contraseña..."
                     className={`custom-border${color}`}
+                    required={true}
                 />
             </ConfigProvider>
             <Space>

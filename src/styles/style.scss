@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
+
+//Styling dynamic colors for the background 
 .container- {
 	@include container(#fff);
 }
@@ -13,7 +15,7 @@
 	}   
 }
 
-
+//Setting a border color to each classname 
 .custom-border {
 	&green{
 		@include inputsField($greenColor);
@@ -29,7 +31,7 @@
 	}
 }
 
-
+//styling buttons colors
 @each $name, $value in $btnColors {
 	.btn-#{$name}{
 		border: 1px solid $value;

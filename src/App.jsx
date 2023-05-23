@@ -1,9 +1,9 @@
-import {Formulario} from './components/Formulario';
+import {CustomForm} from './components/CustomForm';
 import './styles/style.scss';
 
 const App = () => {
   return (
-	  <Formulario/>
+	  <CustomForm/>
   )
 }
 
