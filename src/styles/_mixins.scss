@@ -1,9 +1,5 @@
-@mixin inputsField ($bd, $trs, $trf) {
-    border: 1px solid $bd;
-    width: 200px;
-    height: 30px;
-    transition: $trs;
-    transform: $trf;
+@mixin inputsField ($bd) {
+    border: 1px solid $bd;  
 }
 
 @mixin container ($bg){

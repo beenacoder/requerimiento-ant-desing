@@ -16,16 +16,16 @@
 
 .custom-border {
 	&green{
-		@include inputsField($greenColor, $transitionChange, scale(1));
+		@include inputsField($greenColor);
 	}
 	&yellow {
-		@include inputsField($yellowColor, $transitionChange, scale(0.8));   
+		@include inputsField($yellowColor);   
 	}
 	&blue {
-		@include inputsField($blueColor, $transitionChange, scale(1.1));
+		@include inputsField($blueColor);
 	}
 	&red {
-		@include inputsField($redColor, $transitionChange, scale(1.3));
+		@include inputsField($redColor);
 	}
 }
 
