@@ -2,7 +2,7 @@
     border: 1px solid $bd;  
 }
 
-@mixin container ($bg){
+@mixin country ($bg){
     display: flex;
     flex-direction: column;
     justify-content: center;

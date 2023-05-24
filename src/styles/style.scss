@@ -3,37 +3,47 @@
 
 
 //Styling dynamic colors for the background 
-.container- {
-	@include container(#fff);
+.chile {
+	@include country(lighten($chileColor, 10));
+}
+.colombia {
+	@include country($colombiaColor);
+}
+.argentina {
+	@include country($argentinaColor);
+}
+.peru {
+	@include country($peruColor);
 }
 
-@each $name, $val in $bgColors {
+
+// @each $name, $val in $bgColors {
 	
-	.container-#{$name}{
-		@include container($val)
+// 	.chile-#{$name}{
+// 		@include country($val)
 		
-	}   
-}
+// 	}   
+// }
 
 //Setting a border color to each classname 
-.custom-border {
-	&green{
-		@include inputsField($greenColor);
-	}
-	&yellow {
-		@include inputsField($yellowColor);   
-	}
-	&blue {
-		@include inputsField($blueColor);
-	}
-	&red {
-		@include inputsField($redColor);
-	}
-}
+// .custom-border {
+// 	&colombia{
+// 		@include inputsField($colombiaColor);
+// 	}
+// 	&peru {
+// 		@include inputsField($peruColor);   
+// 	}
+// 	&argentina {
+// 		@include inputsField($argentinaColor);
+// 	}
+// 	&chile {
+// 		@include inputsField($chileColor);
+// 	}
+// }
 
 //styling buttons colors
 @each $name, $value in $btnColors {
-	.btn-#{$name}{
+	.#{$name}{
 		border: 1px solid $value;
 		color: #000000;
 		&:hover {
