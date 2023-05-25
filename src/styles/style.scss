@@ -3,54 +3,40 @@
 
 
 .argentina {
-	@include country(lighten($argentinaColor, 40));
+	@include country(map-get($argentina, bgColor));
 
 	.custom-input {
-		border: 1px solid $argentinaColor;
-		transform: scale(1);
-		&:focus {
-            border: 2px solid $argentinaColor;
-			box-shadow: 2px 2px 5px #2e2d2c;
-        }
+		@include inputsField(map-get($argentina, inputBorderColor),
+							 map-get($argentina, size))
 	}
 }
 
 .chile {
-	@include country(lighten($chileColor, 30));
+	@include country(map-get($chile, bgColor));
+
 	.custom-input {
-		border: 1px solid $chileColor;
-		transform: scale(1.2);
-		&:focus {
-            border: 2px solid $chileColor;
-			box-shadow: 2px 2px 5px #2e2d2c;
-        }
+		@include inputsField(map-get($chile, inputBorderColor),
+							 map-get($chile, size))
 	}
 }
 
 .colombia {
-	@include country(lighten($colombiaColor, 20));
+	@include country(map-get($colombia, bgColor));
+
 	.custom-input {
-		border: 1px solid $colombiaColor;
-		transform: scale(1.3);
-		&:focus {
-            border: 2px solid $colombiaColor;
-			box-shadow: 2px 2px 5px #2e2d2c;
-        }
+		@include inputsField(map-get($colombia, inputBorderColor),
+							 map-get($colombia, size))
 	}
 }
 
 .peru {
-	@include country(lighten($peruColor, 40));
+	@include country(map-get($peru, bgColor));
+
 	.custom-input {
-		border: 1px solid $peruColor;
-		transform: scale(1.4);
-		&:focus {
-            border: 2px solid $peruColor;
-			box-shadow: 2px 2px 5px #2e2d2c;
-        }
+		@include inputsField(map-get($peru, inputBorderColor),
+							 map-get($peru, size))
 	}
 }
-
 
 
 //styling buttons colors

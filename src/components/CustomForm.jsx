@@ -43,7 +43,6 @@ export const CustomForm = () => {
                 />
                 <Form.Item>
                     <Checkbox
-                        className='btn-check'
                     >Recordar mi usuario</Checkbox>
                 </Form.Item>
             </ConfigProvider>

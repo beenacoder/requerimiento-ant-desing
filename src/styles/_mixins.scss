@@ -1,5 +1,10 @@
-@mixin inputsField ($bd) {
-    border: 1px solid $bd;  
+@mixin inputsField ($borderColor, $scale) {
+        border: 1px solid $borderColor;
+		transform: scale($scale);
+		&:focus {
+            border: 2px solid $borderColor;
+			box-shadow: 2px 2px 5px #2e2d2c;
+        }  
 }
 
 @mixin country ($bg){
