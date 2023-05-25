@@ -1,22 +1,22 @@
 
 import { useState } from 'react';
-import { ConfigProvider, Space, Form } from 'antd';
+import { ConfigProvider, Space, Form, Checkbox } from 'antd';
 import CustomInput  from './custom/CustomInput.jsx';
 import CustomButton  from './custom/CustomButton.jsx';
 
 export const CustomForm = () => {
     const [form] = Form.useForm();
 	const [country, setCountry] = useState('chile');
+	
+
 
     const handleClick = (e) => {
         setCountry(e.currentTarget.value);
-        console.log(e.currentTarget.value);
     }
 	
 
 
     return (
-
         <Form
             onSubmit={ValidityState}
             name='basic-form'
@@ -24,7 +24,7 @@ export const CustomForm = () => {
             className={country}
         >
             <ConfigProvider
-                // componentSize={inputSize}
+                componentSize={country}
                 theme={{
                     token: {
                         colorBorder: `#000`,
@@ -34,13 +34,32 @@ export const CustomForm = () => {
                 <CustomInput
                     label="Nombre de Usuario"
                     componentplaceholder="Escribe tu usuario..."
+                    className="custom-input"
                 />
                 <CustomInput
                     label="Contraseña"
                     componentplaceholder="Ingrese contraseña..."
+                    className="custom-input"
                 />
+                <Form.Item>
+                    <Checkbox
+                        className='btn-check'
+                    >Recordar mi usuario</Checkbox>
+                </Form.Item>
             </ConfigProvider>
             <Space>
+                <CustomButton
+                    label="Argentina"
+                    className="btn-argentina"
+                    value="argentina"
+                    handleClick={handleClick}
+                />
+                    <CustomButton
+                        label="Chile"
+                        className="btn-chile"
+                        value="chile"
+                        handleClick={handleClick}
+                    />
                 <CustomButton
                     label="Colombia"
                     className="btn-colombia"
@@ -51,18 +70,6 @@ export const CustomForm = () => {
                     label="Peru"
                     className="btn-peru"
                     value="peru"
-                    handleClick={handleClick}
-                />
-                <CustomButton
-                    label="Argentina"
-                    className="btn-argentina"
-                    value="argentina"
-                    handleClick={handleClick}
-                />
-                <CustomButton
-                    label="Chile"
-                    className="btn-chile"
-                    value="chile"
                     handleClick={handleClick}
                 />
             </Space>

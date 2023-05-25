@@ -5,6 +5,12 @@ $argentinaColor: #0890a8;
 $chileColor: #1331dd;
 
 
+$argentina: (
+    border: 2px solid $argentinaColor,
+    background-color: #0234,
+    transform: scale(1.5),
+);
+
 $btnColors: (
     btn-colombia: $colombiaColor,
     btn-peru: $peruColor,

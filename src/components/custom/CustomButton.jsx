@@ -12,7 +12,8 @@ export default function CustomButton(props) {
 					name={props.name}
 					value={props.value}
 					onClick={props.handleClick}
-					className={props.className} >
+					className={props.className} 
+					>
 					{props.label}
 				</Button>
 			</Form.Item>
